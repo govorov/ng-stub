@@ -1,0 +1,74 @@
+@import "./mixins";
+
+
+#noscript-warning {
+    @include stretched;
+    @include padded;
+    background : map-get($app-palette, haze);
+    z-index    : 1020;
+}
+
+
+#app-loader {
+    @include stretched;
+}
+
+
+.absolute {
+    position: absolute;
+}
+
+
+.relative {
+    position: relative;
+}
+
+
+$sides: right left top bottom;
+.absolute, .relative {
+    @each $side in $sides {
+        &.#{$side} {
+            #{$side}: 0;
+        }
+    }
+}
+
+
+@each $side in $sides {
+    .padded-#{$side} {
+        padding-#{$side}: $app-padding;
+    }
+
+    .marged-#{$side} {
+        margin-#{$side}: $app-margin;
+    }
+
+    .not-marged-#{$side} {
+        margin-#{$side}: 0 !important;
+    }
+}
+
+
+@each $name, $color in $app-palette {
+    .color-#{$name} {
+        color: $color;
+    }
+    .bg-color-#{$name} {
+        background-color: $color;
+    }
+}
+
+
+.text-indent {
+    text-indent: $app-text-indent;
+}
+
+
+.pointer {
+    cursor: pointer;
+}
+
+
+.with-slight-shadow {
+    @include slight-shadow;
+}

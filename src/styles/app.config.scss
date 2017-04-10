@@ -1,0 +1,39 @@
+$_dark: #222;
+
+$app-palette: (
+    primary    : #8A338A,
+    success    : #54B854,
+    notice     : #27acea,
+    warning    : #ea9f27,
+    danger     : #ff4545,
+    black      : #000,
+    white      : #fff,
+    dark       : $_dark,
+    dark-gray  : lighten($_dark, 20%),
+    gray       : lighten($_dark, 40%),
+    light-gray : lighten($_dark, 60%),
+    haze       : #f7f7f7,
+);
+
+
+$app-padding : 0.625rem;
+$app-margin  : 0.625rem;
+
+$app-gutter : 0.625rem;
+
+$app-opacity: (
+    light  : 0.8,
+    medium : 0.4,
+    hard   : 0.2,
+);
+
+$app-hover-strength: 5%;
+
+$app-base-zindex  : 1000;
+
+$app-border-color : map-get($app-palette,light-gray);
+
+$app-animation-duration: 0.6s;
+$app-transition-duration: 0.2s;
+
+$app-text-indent: 2rem;

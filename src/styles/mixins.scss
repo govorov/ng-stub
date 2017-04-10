@@ -1,0 +1,17 @@
+@mixin stretched {
+    position : absolute;
+    top      : 0;
+    bottom   : 0;
+    left     : 0;
+    right    : 0;
+}
+
+
+@mixin padded {
+	padding: $app-padding;
+}
+
+
+@mixin slight-shadow {
+	box-shadow: 0 0 10px -1px map-get($app-palette, light-gray);
+}

@@ -1,0 +1,72 @@
+$app-ui-loader-bg-color        : map-get($app-palette,white);
+$app-ui-loader-opacity         : map-get($app-opacity,light);
+$app-ui-loader-zindex          : $app-base-zindex + 10;
+
+$app-ui-loader-color           : map-get($app-palette,gray);
+$app-ui-loader-secondary-color : rgba(map-get($app-palette,dark), map-get($app-opacity,hard));
+
+$app-ui-loader-animation-speed : 1.5*$app-animation-duration;
+
+$app-ui-loader-size            : 3em;
+$app-ui-loader-thickness       : 0.15rem;
+
+
+//css only loader
+//square element with colored borders and rounded corners => circle with 4 segments
+
+.ui.loader {
+
+    display: none;
+
+    &.active {
+        display: block;
+
+        &:before {
+            @include stretched;
+
+            content    : '';
+            background : rgba($app-ui-loader-bg-color, $app-ui-loader-opacity);
+            z-index    : $app-ui-loader-zindex;
+        }
+
+        &:after {
+
+            position : absolute;
+            content  : '';
+            top      : 50%;
+            left     : 50%;
+
+            visibility : visible;
+
+            margin : (-$app-ui-loader-size/2) 0 0 (-$app-ui-loader-size/2);
+            width  : $app-ui-loader-size;
+            height : $app-ui-loader-size;
+
+            // bezier looks a bit better than linear
+            // animation: loader-spin $app-ui-loader-animation-speed linear;
+            animation: loader-spin $app-ui-loader-animation-speed cubic-bezier(0.29, -0.26, 0.51, 1.46);
+
+            animation-iteration-count: infinite;
+
+            border-radius: $app-ui-loader-size/2;
+
+            border-color: $app-ui-loader-color $app-ui-loader-secondary-color;
+            border-style: solid;
+            border-width: $app-ui-loader-thickness;
+
+            box-shadow : 0px 0px 0px 1px transparent;
+            z-index    : $app-ui-loader-zindex + 1;
+        }
+    }
+}
+
+
+@keyframes loader-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
