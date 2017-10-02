@@ -4,16 +4,10 @@
 * NgRx
 * Foundation/SCSS
 
-Run webpack dev-server:
+Commands:
 
-`yarn run dev-server` or `npm run dev-server`
-
-Production build:
-
-`yarn run build` or `npm run build`
-
-
-## TODO
-
-* tests
-* AOT build
+`yarn run start:jit` : launch dev server in JIT mode
+`yarn run start:aot` : launch dev server in AOT mode
+`yarn run start`     : same as `start:jit`
+`yarn run build`     : build project (AOT)
+`yarn run build:jit` : build project (JIT)
