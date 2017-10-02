@@ -1,15 +1,41 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target"                 : "es5",
-    "lib"                    : ["es6", "dom"],
-    "module"                 : "commonjs",
-    "moduleResolution"       : "node",
-    "baseUrl"                : "./src",
-    "sourceMap"              : true,
+    "sourceMap"        : true,
     "emitDecoratorMetadata"  : true,
     "experimentalDecorators" : true,
-    "noImplicitAny"          : false,
-    "alwaysStrict"           : true,
-    "pretty"                 : true
-  }
+
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution" : "node",
+
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types": [
+      "node"
+    ],
+
+    "baseUrl" : "./src",
+    "paths" : {
+      "@common/ng/*" : [
+        "../../../common/ng/*"
+      ],
+      "*" : [
+        "*",
+        "../node_modules/*"
+      ]
+    }
+
+  },
+
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }
