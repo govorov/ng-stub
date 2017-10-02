@@ -21,16 +21,7 @@
       "node"
     ],
 
-    "baseUrl" : "./src",
-    "paths" : {
-      "@common/ng/*" : [
-        "../../../common/ng/*"
-      ],
-      "*" : [
-        "*",
-        "../node_modules/*"
-      ]
-    }
+    "baseUrl" : "./src"
 
   },
 
